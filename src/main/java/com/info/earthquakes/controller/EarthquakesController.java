@@ -15,7 +15,7 @@ public class EarthquakesController {
 
     @GetMapping("/get")
     @ResponseBody
-    public ApiResponse<FeatureCollection> create(@RequestParam  Long pastday, String countrycode) {
+    public ApiResponse<FeatureCollection> getEarthquakesWithPastdayAndCountrycode(@RequestParam  Long pastday, String countrycode) {
         return ApiResponse.<FeatureCollection>builder()
                 .body(earthquakesService.getEarthquakesWithPastdayAndCountrycode(pastday, countrycode))
                 .success()
